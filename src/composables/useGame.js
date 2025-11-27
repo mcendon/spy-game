@@ -134,6 +134,7 @@ export function useGame() {
     ...defaultCategories,
     ...state.customCategories
   })
+  const getAvatarUrl = (seed) => `https://api.dicebear.com/9.x/adventurer/svg?skinColor=f2d3b1,ecad80&glassesProbability=30&backgroundColor=c8aede,ffdfbf,ffffff,b6e3f4,ffd5dc,e0ffe0&seed=${encodeURIComponent(seed)}`;
 
   const startGame = (settings) => {
     state.settings = { ...state.settings, ...settings }
@@ -148,7 +149,7 @@ export function useGame() {
       name: name,
       role: 'Ciudadano',
       isRevealed: false,
-      avatar: `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(name)}`
+      avatar: getAvatarUrl(name)
     }))
 
     // Assign Spies
@@ -215,7 +216,7 @@ export function useGame() {
     nextPlayer,
     revealSpies,
     resetGame,
-    getAvatarUrl: (seed) => `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(seed)}`,
+    getAvatarUrl,
     saveSettings: (newSettings) => {
       state.settings = { ...state.settings, ...newSettings }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.settings))
