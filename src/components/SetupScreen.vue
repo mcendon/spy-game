@@ -2,6 +2,7 @@
 import { ref, watch, onMounted, nextTick } from 'vue'
 import { useGame } from '../composables/useGame'
 import SettingsScreen from './SettingsScreen.vue'
+import { useDragAndDrop } from '@formkit/drag-and-drop/vue'
 import gsap from 'gsap'
 
 const { categories, startGame, state, saveSettings, getAvatarUrl } = useGame()
@@ -12,13 +13,20 @@ const playerCount = ref(state.settings.playerCount)
 const spyCount = ref(state.settings.spyCount)
 const selectedCategories = ref(state.settings.categories || [])
 const randomCategory = ref(state.settings.randomCategory ?? true)
-const playerNames = ref(
+const [playerNamesList, playerNames] = useDragAndDrop(
     state.settings.playerNames.length === state.settings.playerCount
         ? [...state.settings.playerNames]
         : Array.from(
               { length: state.settings.playerCount },
               (_, i) => `Jugador ${i + 1}`
-          )
+          ),
+    {
+        draggingClass: 'dragging',
+        synthDraggingClass: 'dragging',
+        dropZoneClass: 'drop-zone',
+        synthDropZoneClass: 'drop-zone',
+        dragHandle: '.drag-handle',
+    }
 )
 
 // Ensure spy count is valid and update player names array
@@ -51,28 +59,6 @@ watch(
     },
     { deep: true }
 )
-
-const draggedIndex = ref(null)
-
-const onDragStart = (index, event) => {
-    draggedIndex.value = index
-    event.dataTransfer.effectAllowed = 'move'
-    event.dataTransfer.dropEffect = 'move'
-    // Add a ghost class or style if needed, but browser default is usually okay
-}
-
-const onDrop = (index) => {
-    const fromIndex = draggedIndex.value
-    const toIndex = index
-
-    if (fromIndex === null || fromIndex === toIndex) return
-
-    const item = playerNames.value[fromIndex]
-    playerNames.value.splice(fromIndex, 1)
-    playerNames.value.splice(toIndex, 0, item)
-
-    draggedIndex.value = null
-}
 
 const toggleCategory = (cat) => {
     randomCategory.value = false
@@ -210,19 +196,16 @@ onMounted(async () => {
             <div class="gsap-control space-y-2">
                 <label class="text-gray-300 font-medium text-lg">Nombres</label>
                 <div
+                    ref="playerNamesList"
                     class="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"
                 >
                     <div
                         v-for="(name, index) in playerNames"
                         :key="index"
                         class="gsap-player-item flex items-center space-x-2 group"
-                        draggable="true"
-                        @dragstart="onDragStart(index, $event)"
-                        @dragover.prevent
-                        @drop="onDrop(index)"
                     >
                         <div
-                            class="cursor-move text-gray-500 hover:text-gray-300 p-1"
+                            class="drag-handle cursor-move text-gray-500 hover:text-gray-300 p-1"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -351,3 +334,10 @@ onMounted(async () => {
         <SettingsScreen v-if="showSettings" @close="showSettings = false" />
     </div>
 </template>
+
+<style>
+.dragging {
+    opacity: 0.7;
+    border: 2px solid #8cf8b5;
+}
+</style>
