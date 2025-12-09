@@ -91,7 +91,7 @@ const handleNext = () => {
 
 <template>
     <div
-        class="flex flex-col items-center justify-center h-full w-full max-w-md mx-auto p-6 text-center space-y-8 overflow-hidden"
+        class="flex flex-col items-center justify-center h-full w-full max-w-md mx-auto p-4 pt-8 pb-12 md:pt-6 md:pb-6 text-center space-y-8 overflow-hidden"
     >
         <div v-if="!isRevealed" class="gsap-intro-container space-y-8 w-full">
             <div class="space-y-4">
@@ -132,11 +132,7 @@ const handleNext = () => {
                             : 'text-green-400'
                     "
                 >
-                    {{
-                        currentPlayer.role === 'Espía'
-                            ? 'EL ESPÍA'
-                            : 'CIUDADANO'
-                    }}
+                    {{ currentPlayer.role === 'Espía' ? 'ESPÍA' : 'CIUDADANO' }}
                 </h1>
             </div>
 

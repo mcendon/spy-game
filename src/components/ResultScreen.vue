@@ -52,7 +52,7 @@ const handleReset = () => {
 
 <template>
     <div
-        class="gsap-container flex flex-col items-center justify-center h-full w-full max-w-md mx-auto p-6 space-y-8 text-center"
+        class="gsap-container flex flex-col items-center justify-center h-full w-full max-w-md mx-auto p-4 pt-8 pb-12 md:pt-6 md:pb-6 space-y-8 text-center"
     >
         <h1 class="gsap-title text-4xl font-bold text-white">
             Juego Terminado

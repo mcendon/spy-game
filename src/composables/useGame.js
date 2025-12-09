@@ -15,71 +15,71 @@ const defaultSettings = {
 }
 
 const defaultCategories = {
-  Lugares: [
+  'Lugares': [
     'Escuela', 'Hospital', 'Playa', 'Estación Espacial', 'Supermercado', 'Cine', 'Biblioteca', 'Restaurante', 'Avión', 'Estación de Tren',
     'Zoo', 'Gimnasio', 'Teatro', 'Museo', 'Parque de Atracciones', 'Acuario', 'Desierto', 'Taller Mecánico', 'Comisaría', 'Universidad'
   ],
-  Animales: [
+  'Animales': [
     'León', 'Pingüino', 'Elefante', 'Jirafa', 'Canguro', 'Delfín', 'Águila', 'Tiburón', 'Oso', 'Mono',
     'Serpiente', 'Cebra', 'Rinoceronte', 'Murciélago', 'Búho', 'Koala', 'Pez Payaso', 'Hipopótamo', 'Gorila', 'Lobo'
   ],
-  Comida: [
+  'Comida': [
     'Pizza', 'Sushi', 'Hamburguesa', 'Helado', 'Tacos', 'Tortitas', 'Ensalada', 'Espaguetis', 'Donut', 'Filete',
     'Croissant', 'Sopa', 'Patatas Fritas', 'Bocadillo', 'Lentejas', 'Zumo', 'Tarta', 'Salchicha', 'Galletas', 'Nuggets'
   ],
-  Personajes: [
+  'Personajes': [
     'Spiderman', 'Batman', 'Superman', 'Flash', 'Wonder Woman', 'Hulk', 'Thor', 'Iron Man', 'Capitan America', 'Black Widow',
     'Joker', 'Voldemort', 'Gandalf', 'Harry Potter', 'Pikachu', 'Darth Vader', 'Bella', 'Sherlock Holmes', 'Drácula', 'El Zorro'
   ],
-  Peliculas: [
+  'Peliculas': [
     'Star Wars', 'Star Trek', 'Matrix', 'Jurassic Park', 'Avatar', 'Inception', 'Interstellar', 'The Matrix', 'The Terminator', 'The Avengers',
     'Titanic', 'El Padrino', 'Pulp Fiction', 'Alien', 'E.T.', 'Toy Story', 'Braveheart', 'Gladiator', 'El Señor de los Anillos', 'Forrest Gump'
   ],
-  Oficios: [
+  'Oficios': [
     'Fontanero', 'Opositor', 'Albañil', 'Dependiente', 'Cajero', 'Abogado', 'Panadero', 'Barrendero', 'Auxiliar', 'Crítico de cine',
     'Opositora', 'Dependienta', 'Cajera', 'Abogada', 'Panadera', 'Barrendera', 'Azafata', 'Maestra', 'Enfermera', 'Actriz'
   ],
-  Fiesta: [
+  'Fiesta': [
     'San Fermín', 'La Tomatina', 'Nochevieja', 'Reyes Magos', 'Feria de Abril', 'Fallas', 'Botellón', 'Churros', 'Cotillón', 'Pestiños',
     'Carnaval', 'Verbenas', 'Romería', 'Chupinazo', 'Gigantes y cabezudos', 'Caseta', 'Paso de Semana Santa', 'Belén', 'Cabalgata', 'Piñata'
   ],
-  ObjetosCasa: [
+  'Objetos de casa': [
     'Tendedero', 'Fregona', 'Bajera', 'Desatascador', 'Vitrocerámica', 'Persiana', 'Calderilla', 'Mesilla', 'Tarro', 'Cubiertos',
     'Sartén', 'Batidora', 'Manta', 'Tabla de planchar', 'Escobilla', 'Alfombra', 'Sacacorchos', 'Candelabro', 'Tetera', 'Cojín'
   ],
-  ComidaEspañola: [
+  'Comida española': [
     'Tortilla de patatas', 'Paella', 'Jamón serrano', 'Gazpacho', 'Croquetas', 'Porra', 'Callos', 'Rabo de toro', 'Turrón', 'Gofre',
     'Pulpo a la gallega', 'Patatas bravas', 'Migas', 'Pinchos', 'Chuletón', 'Fabada', 'Pimientos de Padrón', 'Crema catalana', 'Cachopo', 'Rosquillas'
   ],
-  LugaresEspaña: [
+  'Lugares de España': [
     'Plaza Mayor', 'La Sagrada Familia', 'El Retiro', 'La Alhambra', 'El Guggenheim', 'Mercadona', 'El Corte Inglés', 'Estación de Atocha', 'Puerta del Sol', 'El Bernabéu',
     'La Mezquita', 'Plaza de España', 'La Giralda', 'Ramblas', 'Parque Güell', 'Catedral de Burgos', 'Acueducto de Segovia', 'Museo del Prado', 'Teleférico', 'Gibraltar'
   ],
-  CosasPlaya: [
+  'Cosas de playa': [
     'Sombrilla', 'Chanclas', 'Crema solar', 'Nevera portátil', 'Castillos de arena', 'Barca de pedales', 'Colchoneta', 'Cubo y pala', 'Chiringuito', 'Patines',
     'Toalla', 'Bañador', 'Gafas de sol', 'Aletas', 'Escarpines', 'Tabla de surf', 'Vóley playa', 'Heladero', 'Marea', 'Duna'
   ],
-  Geografia: [
+  'Geografía': [
     'Península', 'Archipiélago', 'Volcán', 'Meseta', 'Glaciar', 'Estrecho', 'Océano', 'Afluente', 'Cordillera', 'Desembocadura',
     'Cabo', 'Valle', 'Isla', 'Huso horario', 'Latitud', 'Ecuador', 'Continente', 'Círculo Polar', 'Precipitación', 'Clima'
   ],
-  Tecnologia: [
+  'Tecnología': [
     'USB', 'Router', 'Captcha', 'Cifrado', 'Pendrive', 'Streaming', 'Hackeo', 'Algoritmo', 'Disco duro', 'Webcam',
     'Firewall', 'Proxy', 'Servidor', 'Dominio', 'Base de datos', 'Tablet', 'Auriculares', 'Cable de red', 'Dongle', 'Batería externa'
   ],
-  Conceptos: [
+  'Conceptos': [
     'Lealtad', 'Secreto', 'Causa', 'Silencio', 'Sospecha', 'Confianza', 'Coartada', 'Misión', 'Propaganda', 'Exilio',
     'Doble juego', 'Paciencia', 'Código', 'Fidelidad', 'Amenaza', 'Traición', 'Motivo', 'Identidad', 'Vigilancia', 'Mentira'
   ],
-  Oficina: [
+  'Oficina': [
     'Grapadora', 'Archivador', 'Post-it', 'Tarjetero', 'Tóner', 'Trituradora', 'Agenda', 'Sello', 'Móvil de empresa', 'DNI',
     'Subrayador', 'Bloc de notas', 'Calculadora', 'Perforadora', 'Separadores', 'Escáner', 'Carpeta', 'Clip', 'Bolígrafo', 'Cafetera'
   ],
-  Ocio: [
+  'Ocio': [
     'Discoteca', 'Pub', 'Bolera', 'Casino', 'Escape Room', 'Terraza', 'Parque temático', 'Karaoke', 'Sala de billar', 'Gimnasio',
     'Concierto', 'Festival', 'Monólogo', 'Museo de cera', 'Paseo en barca', 'Mercadillo', 'Picnic', 'Pista de hielo', 'Degustación', 'Zapping'
   ],
-  Viaje: [
+  'Viaje': [
     'Visado', 'Aduana', 'Control de pasaportes', 'Maleta de cabina', 'Billete de tren', 'Recorrido', 'Terminal', 'Escala', 'Reserva', 'Alojamiento',
     'Hostal', 'Check-in', 'Itinerario', 'Souvenir', 'Guía turístico', 'Cambio de divisa', 'Equipaje de mano', 'Embarque', 'Jet lag', 'Frontera'
   ]

@@ -125,7 +125,7 @@ onMounted(async () => {
 
 <template>
     <div
-        class="gsap-container flex flex-col items-center justify-center min-h-screen w-full max-w-2xl mx-auto p-6 space-y-8 overflow-y-auto"
+        class="gsap-container flex flex-col gap-4 items-center justify-center min-h-screen w-full max-w-2xl mx-auto p-4 pt-8 pb-12 md:pt-6 md:pb-6 overflow-y-auto"
     >
         <div class="w-full flex items-center justify-between">
             <h1
@@ -197,7 +197,7 @@ onMounted(async () => {
                 <label class="text-gray-300 font-medium text-lg">Nombres</label>
                 <div
                     ref="playerNamesList"
-                    class="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar"
+                    class="space-y-2 max-h-96 overflow-y-auto pr-2 custom-scrollbar"
                 >
                     <div
                         v-for="(name, index) in playerNames"
@@ -314,7 +314,7 @@ onMounted(async () => {
                         :class="[
                             'py-2 px-1 rounded-lg text-sm font-semibold transition-all duration-200',
                             selectedCategories.includes(cat) && !randomCategory
-                                ? 'bg-purple-600 text-white shadow-lg scale-105'
+                                ? 'bg-purple-600 text-white shadow-lg scale-103'
                                 : 'bg-gray-800 text-gray-400 hover:bg-gray-700',
                         ]"
                     >
@@ -326,7 +326,7 @@ onMounted(async () => {
 
         <button
             @click="handleStart"
-            class="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white text-xl font-bold shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all duration-200 glow-gradient-blue-purple glow-gradient-blue-purple-hover"
+            class="w-full py-4 mt-16 mb-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white text-xl font-bold shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all duration-200 glow-gradient-blue-purple glow-gradient-blue-purple-hover"
         >
             Comenzar
         </button>
